@@ -1,0 +1,37 @@
+@import url("../../../styles/mixins.pcss");
+
+.navigation__list {
+   display: flex;
+}
+
+.navigation__item {
+   font-weight: 600;
+}
+
+.navigation__router-link {
+   display: block;
+   text-decoration: none;
+   transition: .2s;
+
+   &:hover {
+      color: $admin-color;
+      border-bottom: solid 3px $admin-color;
+   }
+}
+
+.router-link-active {
+   pointer-events: none;
+   color: $admin-color;
+   border-bottom: solid 3px $admin-color;
+}
+
+.navigation__link {
+   display: block;
+   padding: 32px 28px;
+   cursor: pointer;
+   white-space: nowrap;
+
+   @include phones {
+      padding: 32px 2vh;
+   }
+}

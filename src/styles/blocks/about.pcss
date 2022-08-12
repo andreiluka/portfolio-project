@@ -1,0 +1,116 @@
+.about {
+   &__container {
+      display: flex;
+      justify-content: center;
+      padding: 156px 0 260px;
+
+      @include tablets {
+         padding-bottom: 157px;
+      }
+
+      @include phones {
+         flex-direction: column;
+         padding-bottom: 100px;
+      }
+   }
+
+   &__personal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 23.24%;
+      min-width: 278px;
+      margin-right: 5.8%;
+      z-index: 10;
+
+      @include desktop {
+         margin-right: 10.8%;
+
+      }
+
+      @include tablets {
+         margin-right: 9.8%;
+         width: 40%;
+      }
+
+      @include phones {
+         width: 80%;
+         margin-bottom: 42px;
+      }
+   }
+
+   &__photo {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 63px;
+
+      @include tablets {
+         max-width: 170px;
+         max-height: 170px;
+      }
+
+      @include phones {
+         margin-bottom: 21px;
+      }
+   }
+
+   &__data {
+      table {
+         table-layout: fixed;
+         width: 100%;
+         border-collapse: collapse;
+         font-weight: 600;
+         line-height: 1.88;
+         
+         th {
+            padding: 5px 0;
+            text-align: start;
+            font-weight: 600;
+            opacity: .3;
+            width: 40%;
+         }
+      }
+   }
+
+   &__content {
+      width: 60%;
+      max-width: 550px;
+      z-index: 10;
+
+      @include phones {
+         width: 100%;
+      }
+   }
+
+
+   &__salutation {
+      margin-bottom: 92px;
+
+      @include tablets {
+         margin-bottom: 27px;
+      }
+   }
+
+   &__hi {
+      font-weight: 600;
+      opacity: 0.5;
+      margin-bottom: 16px;
+   }
+
+   &__few-words {
+      position: relative;
+
+      &:before {
+         content: '*';
+         font-size: 48px;
+         line-height: 1;
+         color: rgba(219, 2, 0, 0.1);
+         transform: rotate(15deg);
+         position: absolute;
+         top: 3px;
+         left: -54px;
+      }
+   }
+}

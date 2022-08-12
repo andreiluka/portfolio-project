@@ -1,0 +1,10 @@
+script(type="text/x-template")#skills-row
+   div(:class="`skills-row__${skill.category}`").skills-row
+      h3.skills-row__title {{skill.category}}
+      ul.skills-row__list
+         li.skills-row__item(
+            v-for="skillsItem in skill.skills" 
+            :style="`background: conic-gradient(from -90deg, #9300e8, #4a00ed ${skillsItem.percent}%, transparent ${skillsItem.percent}%)`"
+         )
+            .skills-row__item-block
+               .skills-row__item-name {{skillsItem.title}}

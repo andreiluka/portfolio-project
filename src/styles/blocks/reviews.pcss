@@ -1,0 +1,85 @@
+.reviews {
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 252px 0 191px;
+
+      @include desktop {
+         padding: 217px 0 127px;
+      }
+
+      @include phones {
+         padding: 126px 0 160px;
+      }
+   }
+
+   &__title {
+      display: flex;
+      margin-bottom: 64px;
+      z-index: 10;
+
+      @include tablets {
+         margin-bottom: 38px;
+         flex-wrap: wrap;
+      }
+      
+      @include phones {
+         justify-content: center;
+         margin-bottom: 30px;
+         text-align: center;
+      }
+   }
+
+   &__btns {
+      margin-left: 92px;
+
+      @include desktop {
+         margin-left: 82px;
+      }
+
+      @include tablets {
+         margin-left: 32px;
+      }
+
+      @include phones {
+         margin: 0 10px;
+      }
+   }
+
+   &__btn {
+      width: 50px;
+      height: 50px;
+      padding: 19px;
+      border-radius: 50%;
+      border: solid 1px $buttons-color;
+      background-color: transparent;
+      margin-right: 30px;
+      transition: .3s;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+      &:hover {
+         background-color: $buttons-color;
+
+         .reviews__arrow-prev, .reviews__arrow-next {
+            fill: white;
+         }
+      }
+   }
+
+   &__arrow-prev, &__arrow-next {
+      fill: $buttons-color;
+   }
+
+   &__arrow-prev {
+      transform: rotate(180deg) translateY(50%);
+   }
+
+   &__arrow-next {
+      transform: translateY(-50%);
+   }
+}

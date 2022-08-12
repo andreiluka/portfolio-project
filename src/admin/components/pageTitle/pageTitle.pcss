@@ -1,0 +1,23 @@
+@import url("../../../styles/mixins.pcss");
+
+.admin-header {
+   display: flex;
+   align-items: center;
+   padding: 47px 0;
+
+   @include phones {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+}
+
+.admin-title {
+   font-size: 21PX;
+   font-weight: 700;
+   margin-right: 59px;
+
+   @include phones {
+      font-size: 18PX;
+      margin: 0 0 36px 0;
+   }
+}

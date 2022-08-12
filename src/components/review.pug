@@ -1,0 +1,10 @@
+script(type="text/x-template")#review
+   .review
+      .review__text
+         p.text {{man.text}}
+      .review__person
+         .review__avatar
+            img(:src="`https://webdev-api.loftschool.com/${man.photo}`" class="review__pic")
+         .review__sign
+            h4.review__name {{man.author}}
+            span.review__profession {{man.occ}}

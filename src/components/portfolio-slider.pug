@@ -1,0 +1,46 @@
+script(type="text/x-template")#portfolio-slider
+   .portfolio-slider(:data-slide="currentIndex + 1")
+      .portfolio-slider__container
+         ul.portfolio-slider__list
+            li.portfolio-slider__item
+               img(:src="`https://webdev-api.loftschool.com/${currentWork.photo}`" class="portfolio-slider__project")
+      thumbs(
+         :works="reversedWorks"
+         :currentWork="currentWork"
+         :newTransform="newTransform"
+         @thumbClick="thumbIndex => $emit('thumbClick' ,thumbIndex)"
+      )
+      btns(
+         :works="works"
+         :currentIndex="currentIndex"
+         @slide="direction => $emit('slide', direction)"
+      )
+
+
+script(type="text/x-template")#portfolio-thumbs
+   .portfolio-slider__thumb-container
+      ul.portfolio-slider__thumb-list(:style="{transform:newTransform}")
+         li.portfolio-slider__thumb-item(
+            v-for="(work, thumbIndex) in works"
+            :class="{'portfolio-slider__thumb-item--active': work.id === currentWork.id}"
+            @click="$emit('thumbClick', thumbIndex)"
+         )
+            .portfolio-slider__thumb-block
+               img(:src="`https://webdev-api.loftschool.com/${work.photo}`" class="portfolio-slider__thumb-project")
+
+script(type="text/x-template")#portfolio-btns
+   .portfolio-slider__btns
+      button(
+         type="button"
+         class="portfolio-slider__btn portfolio-slider__btn--prev" 
+         :class="{'portfolio-slider__btn--unable' : currentIndex == this.works.length - 1}" 
+         @click.prevent="$emit('slide', 'next')" 
+      )
+         +icon('arrow', 'portfolio-slider__arrow-next')
+      button(
+         type="button"
+         class="portfolio-slider__btn portfolio-slider__btn--next" 
+         :class="{'portfolio-slider__btn--unable' : currentIndex == 0}" 
+         @click.prevent="$emit('slide', 'prev')" 
+      )
+         +icon('arrow', 'portfolio-slider__arrow-prev')

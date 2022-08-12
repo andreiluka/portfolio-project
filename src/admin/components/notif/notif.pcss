@@ -1,0 +1,38 @@
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  height: 74px;
+  border-radius: 4px;
+  z-index: 99;
+  padding: 0 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  transition: .3s all;
+
+  &--success {
+    background-color: $success-color;
+  }
+
+  &--error {
+    background-color: $errors-color;
+  }
+
+  &--hidden {
+    bottom: -74px;
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    background: svg-load('cross.svg', fill=white) center center / contain no-repeat;
+    cursor: pointer;
+  }
+}

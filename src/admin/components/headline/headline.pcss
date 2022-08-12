@@ -1,0 +1,45 @@
+@import url("../../../styles/mixins.pcss");
+
+.headline-component {
+   background: $admin-header-color;
+   padding: 16px 0;
+}
+
+.headline__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.headline__left {
+   display: flex;
+   align-items: center;
+}
+
+.headline__title {
+   color: white;
+   opacity: 0.5;
+   font-weight: 300;
+   font-size: 15px;
+   letter-spacing: .5px;
+
+   @include phones {
+      display: none;
+   }
+}
+
+
+.headline__quit {
+   color: white;
+   opacity: 0.5;
+   font-weight: 300;
+   font-size: 15px;
+   letter-spacing: .6px;
+   text-decoration: underline;
+   background: transparent;
+   transition: .3s;
+
+   &:hover {
+      text-decoration: none;
+   }
+}

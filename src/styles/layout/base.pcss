@@ -1,0 +1,163 @@
+html {
+  @include desktop {
+    font-size: 15px;
+  }
+  @include tablets {
+    font-size: 14px;
+  }
+}
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button[type="button"] {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1480px;
+  width: 95%;
+  height: 100%;
+
+  @include phones {
+    width: 85%;
+  }
+
+  &--admin {
+    max-width: 1080px;
+  }
+  
+  &--width {
+    @include phones {
+      width: 100%;
+    }
+  }
+}
+
+.fullscreen-section {
+  height: 100vh;
+  min-height: 650px;
+}
+
+
+.title {
+  font-size: 35PX;
+  font-weight: 800;
+  margin-bottom: 27px;
+
+  @include tablets {
+    font-size: 30PX;
+  }
+
+  @include phones {
+    font-size: 24PX;
+  }
+
+  &--font-29 {
+    font-size: 29PX;
+    line-height: 1.6;
+
+    @include phones {
+      font-size: 24PX;
+      line-height: 1.2;
+    }
+  }
+}
+
+.text {
+  opacity: 0.5;
+  font-weight: 600;
+  line-height: 1.88;
+  max-width: 600px;
+
+  @include desktop {
+    font-size: 16PX;
+  }
+
+  @include tablets {
+    font-size: 14PX;
+    line-height: 1.71;
+  }
+
+  &--weight-normal {
+    font-weight: normal;
+    opacity: .3;
+  }
+  
+  &--style-italic {
+    font-style: italic;
+    font-weight: normal;
+  }
+}

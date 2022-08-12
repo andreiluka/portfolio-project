@@ -1,0 +1,67 @@
+@import url("../../../styles/mixins.pcss");
+
+.project-component {
+   height: 100%;
+
+   &--active {
+      opacity: .4;
+      pointer-events: none;
+   }
+}
+
+.project__img {
+   position: relative;
+
+   &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 55.88%;
+   }
+}
+
+.project__pic {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   overflow: hidden;
+   object-position: top;
+}
+
+.project__desc {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   padding: 13px 30px 38px;
+}
+
+.project__text {
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+   margin-bottom: 35px;
+}
+
+.project__title {
+   font-size: 18px;
+   font-weight: bold;
+   padding: 20px 0 10px;
+}
+
+.text {
+   margin-bottom: 18px;
+}
+
+.project__link {
+   font-weight: 600;
+   color: $admin-color;
+   text-decoration: none;
+}
+
+.project__buttons {
+   display: flex;
+   justify-content: space-between;
+}

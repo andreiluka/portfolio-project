@@ -1,0 +1,9 @@
+script(type="text/x-template")#reviews-slider
+   .reviews-slider
+      .reviews-slider__container
+         ul.reviews-slider__list(:style="{transform:newTransform}")
+            li(class="reviews-slider__item" v-for="man in reviews")
+               review(
+                  :man="man"
+               )
+include review

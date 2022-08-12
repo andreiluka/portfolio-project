@@ -1,0 +1,35 @@
+section(class="portfolio")#portfolio
+   .container
+      h2.title Мои работы
+      #portfolio-widget
+
+include portfolio-slider
+
+
+script(type="text/x-template")#portfolio-content
+      .portfolio__content
+         slider(
+            :works="works"
+            :currentWork="currentWork"
+            :currentIndex="currentIndex"
+            @slide="handleSlide"
+            :newTransform="newTransform"
+            @thumbClick="handleClick"
+         )
+         .portfolio__desc
+            marks(:tags="tagsArray")
+            words(:currentWork="currentWork")
+
+script(type="text/x-template")#portfolio-marks
+   ul.portfolio__marks-list
+      li.portfolio__marks-item(v-for="tag in tags")
+         .portfolio__marks-block {{tag}}
+
+script(type="text/x-template")#portfolio-words
+   .portfolio-text-container
+      h3(class="title title--font-29") {{currentWork.title}}
+      .portfolio__text
+         p.text {{currentWork.description}}
+      .portfolio__schoolls-site
+         a.portfolio__link(:href="currentWork.link" target="_blank") Посмотреть сайт
+            +icon('link', 'portfolio__link-icon')

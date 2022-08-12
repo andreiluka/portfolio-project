@@ -1,0 +1,128 @@
+@import url("../../../styles/mixins.pcss");
+
+.reviews-form {
+   margin-bottom: 30px;
+}
+
+.reviews-form__content {
+   display: flex;
+   padding: 30px 0 20px;
+
+   @include phones {
+      flex-direction: column;
+      align-items: center;
+   }
+}
+
+.reviews-form__avatar {
+   text-align: center;
+   margin: 0 30px 25px 0;
+
+   @include phones {
+      margin-right: 0;
+   }
+}
+
+.reviews-form__img {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   background: $grey-color;
+   overflow: hidden;
+   position: relative;
+}
+
+.reviews-form__photo {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: top;
+}
+
+.reviews-form__icon {
+   width: 112px;
+   height: 112px;
+   background-image: svg-load("avatar.svg", fill=#fff);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.reviews-form__desc {
+   max-width: 610px;
+   flex-grow: 1;
+
+   @include phones {
+      width: 100%;
+   }
+}
+
+.reviews-form__user {
+   display: flex;
+   justify-content: space-between;
+   font-weight: 700;
+
+   @include tablets {
+      flex-direction: column;
+   }
+}
+
+.reviews-form__user-data {
+   width: 100%;
+   max-width: 290PX;
+   margin: 0 29px 36px 0;
+
+   &:last-child {
+      margin-right: 0;
+   }
+
+   @include phones {
+      max-width: initial;
+   }
+}
+
+.reviews-form__text {
+   margin-bottom: 30px;
+}
+
+.reviews-form__buttons {
+   display: flex;
+   justify-content: flex-end;
+
+   @include phones {
+      justify-content: center;
+   }
+}
+
+.reviews-form__button {
+   margin-right: 2%;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.reviews__list {
+   display: grid;
+   grid-template-columns: repeat(3, 31.5%);
+   justify-content: space-between;
+   grid-row-gap: 30px;
+
+   @include tablets {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2.5vw 2.5%;
+   }
+
+   @include phones {
+      grid-template-columns: 1fr;
+   }
+}
+
+.reviews__item {
+   min-height: 380px;
+
+   &:first-child {
+      min-height: initial;
+   }
+}

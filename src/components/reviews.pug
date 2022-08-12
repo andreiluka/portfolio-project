@@ -1,0 +1,24 @@
+section(class="reviews")#reviews
+   .container
+      #reviews__widget
+
+      include reviews-slider
+
+
+
+script(type="text/x-template")#reviews__content
+   .reviews__container
+      .reviews__title
+         h2.title Что обо мне говорят
+         btns(@slide="handleSlide")
+      slider(
+         :reviews="reviews"
+         :newTransform="newTransform"
+      )
+
+script(type="text/x-template")#reviews__btns
+   .reviews__btns
+      button(@click="slide('prev')" class="reviews__btn reviews__btn--prev" type="button")
+         +icon('arrow', 'reviews__arrow-prev')
+      button(@click="slide('next')" class="reviews__btn reviews__btn--next" type="button")
+         +icon('arrow', 'reviews__arrow-next')
