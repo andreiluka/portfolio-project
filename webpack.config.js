@@ -10,7 +10,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/";
+  const publicPath = "portfolio2/dist/";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -30,10 +30,6 @@ module.exports = (env, argv) => {
     test: /\.js$/,
     loader: "babel-loader",
     exclude: /node_modules/,
-    options: {
-      presets: ["@babel/preset-env"],
-      plugins: ["@babel/plugin-syntax-dynamic-import"],
-    },
   };
 
   const files = {
